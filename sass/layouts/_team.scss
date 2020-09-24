@@ -11,9 +11,10 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   background-color: $primary-white-color;
-}
-.team__item:nth-child(4n) {
-  margin-right: 0;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 }
 
 .team__employee-name {

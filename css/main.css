@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! modern-normalize v0.7.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -249,6 +248,41 @@ summary {
   display: list-item;
 }
 
+@font-face {
+  font-family: "Raleway";
+  src: url(../../fonts/Raleway/Raleway-VariableFont_wght.ttf) format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/Roboto/Roboto-Regular.ttf) format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/Roboto/Roboto-Medium.ttf) format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/Roboto/Roboto-Bold.ttf) format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../../fonts/Roboto/Roboto-Black.ttf) format("ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+
 body {
   font-family: Roboto, sans-serif;
   margin: 0;
@@ -322,7 +356,10 @@ textarea {
   display: flex;
 }
 
-.flexbox.aling-items {
+.flexaling {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -391,7 +428,7 @@ textarea {
   text-align: center;
 }
 
-.site-nav__item:not(:last-child) {
+.site-nav__item.site-nav__item:not(:last-child) {
   margin-right: 50px;
 }
 
@@ -405,8 +442,7 @@ textarea {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav__link:hover,
-.site-nav__link:focus {
+.site-nav__link:hover, .site-nav__link:focus {
   color: #2196f3;
 }
 
@@ -434,15 +470,15 @@ textarea {
   color: #212121;
 }
 
-.logo-blue {
+.logo--blue {
   color: #2196f3;
 }
 
-.logo-black {
+.logo--black {
   color: #212121;
 }
 
-.logo-white {
+.logo--white {
   color: #ffffff;
 }
 
@@ -739,8 +775,7 @@ textarea {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customers__link:hover,
-.customers__link:focus {
+.customers__link:hover, .customers__link:focus {
   fill: #2196f3;
   border-color: #2196f3;
 }
@@ -820,11 +855,6 @@ textarea {
   pointer-events: none;
 }
 
-.backdrop__is-hidden .modal {
-  -webkit-transform: scale(0.9) translate(-50%, -50%);
-          transform: scale(0.9) translate(-50%, -50%);
-}
-
 .modal {
   position: absolute;
   min-width: 528px;
@@ -841,6 +871,11 @@ textarea {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.backdrop__is-hidden .modal {
+  -webkit-transform: scale(0.9) translate(-50%, -50%);
+          transform: scale(0.9) translate(-50%, -50%);
+}
+
 .modal__button {
   position: absolute;
   margin-left: auto;
@@ -853,8 +888,7 @@ textarea {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.modal__button:hover,
-.modal__button:focus {
+.modal__button:hover, .modal__button:focus {
   fill: #2196f3;
 }
 
@@ -892,10 +926,6 @@ textarea {
   letter-spacing: 0.01em;
   color: #757575;
   margin-bottom: 4px;
-}
-
-.form__input:focus ~ .form__icon {
-  fill: #2196f3;
 }
 
 .form__input {
@@ -958,13 +988,17 @@ textarea {
   position: relative;
 }
 
+.form__container:focus {
+  fill: #2196f3;
+}
+
 .form__icon {
   position: absolute;
   top: 11px;
   left: 12px;
 }
 
-.form__container:focus {
+.form__input:focus ~ .form__icon {
   fill: #2196f3;
 }
 
@@ -1007,75 +1041,4 @@ textarea {
   background-size: contain;
   background-color: #2196f3;
 }
-
-/* портфолио */
-/* футер */
-/* модалка */
-/* No CSS */
-/* позыцыонирование */
-/* теги */
-/* утилиты */
-/* шапка */
-/* інлайн свг */
-/* фон */
-/* 
-.address-link::before {
-  display: inline-block;
-  content: "";
-
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-
-  margin-right: 10px;
-} */
-/* .icon-email::before {
-  background-image: url(../images/email.svg);
-  width: 16px;
-  height: 12px;
-  background-size: 16px 12px;
-}
-
-.icon-phone::before {
-  background-image: url(../images/phone.svg);
-  width: 10px;
-  height: 16px;
-  background-size: 10px 16px;
-} */
-/* герой */
-/* преимущеста */
-/* .advantages-list .item::before {
-  display: block;
-  content: "";
-  height: 120px;
-  width: 270px;
-  background-color: $team-background-color);
-  margin-bottom: 30px;
-
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-size: 70px 70px;
-}
-
-.advantages-list .icon-warning::before {
-  background-image: url(../images/1.svg);
-}
-
-.advantages-list .icon-punctuality::before {
-  background-image: url(../images/2.svg);
-}
-
-.advantages-list .icon-planning::before {
-  background-image: url(../images/3.svg);
-}
-
-.advantages-list .icon-moderntechnology::before {
-  background-image: url(../images/4.svg);
-} */
-/* робота */
-/* команда */
-/* роблю свг */
-/* клиенты */
-/* портфолио */
 /*# sourceMappingURL=main.css.map */

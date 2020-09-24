@@ -3,10 +3,10 @@
   padding-top: 32px;
   padding-bottom: 32px;
   text-align: center;
-}
 
-.site-nav__item:not(:last-child) {
-  margin-right: 50px;
+  &.site-nav__item:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
 .site-nav__link {
@@ -18,23 +18,22 @@
   color: $title-text-color;
 
   transition: color 250ms $cubic-bezier;
-}
 
-.site-nav__link:hover,
-.site-nav__link:focus {
-  color: $accent-color;
+  &:hover, &:focus {
+    color: $accent-color;
+  }
 }
 
 .site-nav__link--current {
   color: $accent-color;
-}
 
-.site-nav__link--current::after {
-  position: absolute;
+  &::after {
+    position: absolute;
   content: "";
   width: 100%;
   left: 0;
   bottom: 0;
   border: 2px solid $accent-color;
   border-radius: 2px;
+  }
 }

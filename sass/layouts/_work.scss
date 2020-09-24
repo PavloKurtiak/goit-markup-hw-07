@@ -2,9 +2,10 @@
   width: calc((100% - 30px * 2) / 3);
   flex-wrap: wrap;
   margin-right: 30px;
-}
-.work__item:nth-child(3n) {
-  margin-right: 0;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .work__container {

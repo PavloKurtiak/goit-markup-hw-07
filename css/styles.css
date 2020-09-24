@@ -203,11 +203,11 @@ textarea {
   margin-left: auto;
 }
 
-.address .item + .item {
+.address__item:not(:first-child) {
   margin-left: 30px;
 }
 
-.address-link {
+.address__link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.15;
@@ -224,19 +224,19 @@ textarea {
 
 /* інлайн свг */
 
-.address-list {
+.address__list {
   display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.address-list .icon {
+.address__icon {
   margin-right: 10px;
 }
 
-.address-link:hover,
-.address-link:focus {
+.address__link:hover,
+.address__link:focus {
   fill: var(--accent-color);
   color: var(--accent-color);
 }
@@ -286,7 +286,7 @@ textarea {
   background-color: var(--background-hero-color);
 }
 
-.hero-title {
+.hero__title {
   text-align: center;
   font-weight: 900;
   font-size: 44px;
@@ -296,11 +296,11 @@ textarea {
   color: var(--primary-white-color);
 }
 
-.hero-content {
+.hero__content {
   max-width: 696px;
 }
 
-.hero-button {
+.main-button {
   display: block;
   margin-top: 30px;
   min-width: 200px;
@@ -319,20 +319,20 @@ textarea {
 
 /* преимущеста */
 
-.advantages-list {
+.advantages__list {
   padding-left: 0;
   flex-wrap: wrap;
 }
-.advantages-list .item {
+.advantages__item {
   width: calc((100% - 30px * 3) / 4);
 
   margin-right: 30px;
 }
-.advantages-list .item:nth-child(4n) {
+.advantages__item:nth-child(4n) {
   margin-right: 0;
 }
 
-.advantages-list .block {
+.advantages__block {
   display: flex;
   height: 120px;
   width: 270px;
@@ -371,7 +371,7 @@ textarea {
   background-image: url(../images/4.svg);
 } */
 
-.advantages-title {
+.secondary__title {
   margin-top: 0;
   margin-bottom: 0;
 
@@ -383,7 +383,7 @@ textarea {
   color: var(--title-text-color);
 }
 
-.advantages-text {
+.advantages__text {
   margin-top: 10px;
   margin-bottom: 0;
 
@@ -397,24 +397,24 @@ textarea {
 
 /* робота */
 
-.work-list .item {
+.work__item {
   width: calc((100% - 30px * 2) / 3);
   flex-wrap: wrap;
   margin-right: 30px;
 }
-.work-list .item:nth-child(3n) {
+.work__item:nth-child(3n) {
   margin-right: 0;
 }
 
-.work-list .position-item {
+.work__container {
   position: relative;
 }
 
-.work-list .advantages-title {
+.secondary__title--color {
   color: var(--primary-white-color);
 }
 
-.work-list .position-title {
+.work__position-title {
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -427,15 +427,11 @@ textarea {
 
 /* команда */
 
-.team-item {
-  background-color: var(--primary-white-color);
-}
-
 .team {
   background-color: var(--team-background-color);
 }
 
-.team-list .item {
+.team__item {
   width: calc((100% - 30px * 3) / 4);
   flex-wrap: wrap;
   margin-right: 30px;
@@ -443,12 +439,13 @@ textarea {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  background-color: var(--primary-white-color);
 }
-.team-list .item:nth-child(4n) {
+.team__item:nth-child(4n) {
   margin-right: 0;
 }
 
-.employee-name {
+.team__employee-name {
   margin-top: 30px;
   margin-bottom: 0;
 
@@ -461,7 +458,7 @@ textarea {
   color: var(--title-text-color);
 }
 
-.profession-name {
+.team__profession-name {
   margin-top: 10px;
   margin-bottom: 0;
 
@@ -476,7 +473,7 @@ textarea {
 
 /* роблю свг */
 
-.team-list .action {
+.team__list {
   display: flex;
   list-style: none;
   padding-left: 32px;
@@ -484,7 +481,7 @@ textarea {
   margin-top: 16px;
 }
 
-.action .link-item {
+.social-link {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -497,33 +494,30 @@ textarea {
     background-color 250ms var(--cubic-bezier);
 }
 
-.action .link-item:hover,
-.action .link-item:focus {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--accent-color);
   fill: var(--primary-white-color);
 }
 
-.action .list-icon {
+.social-list {
   margin-right: 10px;
 }
 
-.action .list-icon:nth-child(4n) {
+.action-list:nth-child(4n) {
   margin-right: 0;
 }
 
 /* клиенты */
-.customers-list {
+.customers__list {
   padding: 0;
 }
 
-.customers-item {
-}
-
-.customers-item:nth-child(6n) {
+.customers__item:nth-child(6n) {
   margin-right: 0;
 }
 
-.customers-link {
+.customers__link {
   fill: var(--icon-main-fell);
   width: 170px;
   height: 90px;
@@ -537,22 +531,24 @@ textarea {
     border-color 250ms var(--cubic-bezier);
 }
 
-.customers-link:hover,
-.customers-link:focus {
+.customers__link:hover,
+.customers__link:focus {
   fill: var(--accent-color);
   border-color: var(--accent-color);
 }
 
 /* портфолио */
 
-.filter-list {
+.filter {
   justify-content: center;
 }
-.filter-list .item + .item {
+
+
+.filter__item:not(:first-child) {
   margin-left: 8px;
 }
 
-.filter-button {
+.filter__button {
   padding: 6px 22px;
   margin-bottom: 50px;
 
@@ -571,8 +567,8 @@ textarea {
     box-shadow 250ms var(--cubic-bezier);
 }
 
-.filter-button:hover,
-.filter-button:focus {
+.filter__button:hover,
+.filter__button:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -581,7 +577,7 @@ textarea {
 
 /* портфолио */
 
-.portfolio-list {
+.portfolio__list {
   flex-wrap: wrap;
 }
 
@@ -591,21 +587,21 @@ textarea {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.portfolio-list .item {
+.portfolio__item {
   width: calc((100% - 30px * 2) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
 
   transition: box-shadow 250ms var(--cubic-bezier);
 }
-.portfolio-list .item:nth-child(3n) {
+.portfolio__item:nth-child(3n) {
   margin-right: 0;
 }
 
-.portfolio-list .item:nth-last-child(-n + 3) {
+.portfolio__item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
-.portfolio-list .border {
+.portfolio__border {
   border-left: 1px solid;
   border-bottom: 1px solid;
   border-right: 1px solid;
@@ -614,7 +610,7 @@ textarea {
   border-color: var(--portfolio-border-color);
 }
 
-.portfolio-title {
+.portfolio__title {
   margin-top: 0;
   margin-bottom: 0;
 
@@ -626,7 +622,7 @@ textarea {
   color: var(--title-text-color);
 }
 
-.portfolio-text {
+.portfolio__text {
   margin-top: 4px;
   margin-bottom: 0;
 
@@ -638,12 +634,12 @@ textarea {
   color: var(--primary-text-color);
 }
 
-.portfolio-list .images {
+.portfolio__images {
   position: relative;
   overflow: hidden;
 }
 
-.portfolio-list .images-overlay {
+.portfolio__overlay {
   position: absolute;
 
   top: 0;
@@ -656,7 +652,7 @@ textarea {
     opacity 250ms var(--cubic-bezier);
 }
 
-.portfolio-list .images-text {
+.portfolio__overley-text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -675,18 +671,18 @@ textarea {
   height: 100%;
 }
 
-.item:hover .images-overlay {
+.portfolio__item:hover .portfolio__overlay {
   transform: translateY(0);
 }
 
 /* футер */
 
-.container.flexbox {
+.footer__container {
   display: flex;
   justify-content: space-between;
 }
 
-.address-text {
+.company-address__text {
   margin-top: 20px;
 
   font-weight: 400;
@@ -698,7 +694,7 @@ textarea {
   color: var(--primary-white-color);
 }
 
-.footer-address .item:not(:first-child) {
+.company-address__item:not(:first-child) {
   margin-top: 9px;
 }
 
@@ -706,31 +702,18 @@ textarea {
   flex-direction: column;
 }
 
-.join .advantages-title,
-.mailing .advantages-title {
-  color: var(--primary-white-color);
-}
-
-.join .link-item {
+.social-link--color {
   fill: var(--primary-white-color);
   background-color: var(--icon-background-color);
 }
 
-.join .link-item:hover,
-.join .link-item:focus {
-  background-color: var(--accent-color);
-}
-.join .action {
+.join__container {
   margin-top: 20px;
   margin-bottom: 0;
   padding-left: 0;
 }
 
-/* .footer .colum {
-  margin-right: 70px;
-} */
-
-.flexbox.footer-button {
+.mailing__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -738,12 +721,12 @@ textarea {
   margin-left: 12px;
 }
 
-.button-icon {
+.mailing__icon {
   margin-left: 10px;
   fill: var(--primary-white-color);
 }
 
-.input-footer {
+.mailing__input {
   background-color: var(--footer-background-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -753,11 +736,11 @@ textarea {
   color: var(--primary-white-color);
 }
 
-.input-footer::placeholder {
+.mailing__input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.form-footer {
+.mailing__form {
   margin-top: 20px;
 }
 

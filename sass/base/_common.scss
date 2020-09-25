@@ -37,10 +37,9 @@
 
 .button {
   border: 1px solid transparent;
-}
-
-.button:focus {
-  outline: inherit;
+  &:focus {
+    outline: inherit;
+  }
 }
 
 .margin-auto {

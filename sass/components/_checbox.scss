@@ -1,3 +1,7 @@
+.checkbox__input {
+  appearance: none;
+}
+
 .checbox__icon::before {
   content: "";
   display: inline-block;

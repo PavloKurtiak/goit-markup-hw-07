@@ -1024,6 +1024,12 @@ textarea {
   text-decoration: underline;
 }
 
+.checkbox__input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 .checbox__icon::before {
   content: "";
   display: inline-block;
